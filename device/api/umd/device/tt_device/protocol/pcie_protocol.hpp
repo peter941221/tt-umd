@@ -63,6 +63,7 @@ public:
         const void* src, size_t size, tt_xy_pair core_start, tt_xy_pair core_end, uint64_t addr, NocId noc_id) override;
     void bar_write32(uint32_t addr, uint32_t data) override;
     uint32_t bar_read32(uint32_t addr) override;
+    int export_dmabuf(tt_xy_pair core, uint64_t addr, size_t size, uint64_t ordering, NocId noc_id) override;
 
     // DmaInterface.
     [[nodiscard]] bool dma_read(void* dst, uint64_t src_addr, size_t size, tt_xy_pair core, NocId noc_id) override;
